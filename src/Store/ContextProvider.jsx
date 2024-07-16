@@ -13,6 +13,7 @@ export const ContextProvider = ({ children }) => {
     "KWD",
     "INR",
     "NPR",
+    "AUD",
   ];
 
   const [primCurrency, setPrimCurrency] = useState("USD");

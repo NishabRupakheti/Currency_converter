@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./Components/Header";
 import Main from "./Components/Main";
 import { ContextProvider } from "./Store/ContextProvider";
+import Footer from "./Components/Footer";
 
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
       <ContextProvider>
         <Header />
         <Main />
+        <Footer/>
       </ContextProvider>
     </div>
   );

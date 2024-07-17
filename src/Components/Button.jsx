@@ -15,15 +15,17 @@ const Button = () => {
   } = useContext(CurrencyContext);
 
   const swapHandle = () => {
-    setPrimCurrency(secCurrency);
-    setSecCurrency(primCurrency);
-    setPrimaryField(secondaryField);
-    setSecondaryField(primaryField);
+    setPrimCurrency((prevPrimCurrency) => {
+      setSecCurrency(prevPrimCurrency);
+      return secCurrency;
+    });
+
+    setPrimaryField("");
+    setSecondaryField("");
   };
 
-
   useEffect(() => {
-    if(primaryField == ""){
+    if (primaryField == "") {
       setSecondaryField("");
     }
   }, [primaryField]);
@@ -53,9 +55,8 @@ const Button = () => {
     }
   };
 
-
   return (
-    <div className="container text-center" >
+    <div className="container text-center">
       <button
         type="button"
         className="btn btn-outline-dark"

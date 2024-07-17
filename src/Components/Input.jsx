@@ -23,7 +23,7 @@ const Input = () => {
           onChange={(e) => setPrimaryField(e.target.value)}
           type="number"
           className="form-control"
-          placeholder="Primary currency"
+          placeholder={`Enter ${primCurrency}`}
           aria-label="Amount"
         />
         <div className="input-group-append">

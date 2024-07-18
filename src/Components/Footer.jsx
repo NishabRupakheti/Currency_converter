@@ -1,17 +1,40 @@
 import React from "react";
 import styles from "../styles/Footer.module.css";
+import { IoMdArrowDropdown } from "react-icons/io";
+
 
 const Footer = () => {
   return (
-    <div className={`card ${styles.footer}`}>
-      <div className="card-header"> 🐉 </div>
-      <div className="card-body">
-        <blockquote className="blockquote mb-0">
-          <p className={`${styles.footHead}`}>Nishab</p>
-          <footer className="blockquote-footer">
-            Student of ICT
-          </footer>
-        </blockquote>
+    <div className="accordion text-center " id="accordionExample">
+      <div className="accordion-item">
+        <h2 className="accordion-header">
+          <button
+            className="accordion-button text-center d-block fs-3"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseOne"
+            aria-expanded="true"
+            aria-controls="collapseOne"
+          >
+            <IoMdArrowDropdown />
+          </button>
+        </h2>
+        <div
+          id="collapseOne"
+          className="accordion-collapse collapse show"
+          data-bs-parent="#accordionExample"
+        >
+          <div className="accordion-body">
+            <div className={`card ${styles.footer}`}>
+              <div className="card-body">
+                <blockquote className="blockquote mb-0">
+                  <p className={`${styles.footHead}`}>Nishab</p>
+                  <footer className="blockquote-footer">Student of ICT</footer>
+                </blockquote>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

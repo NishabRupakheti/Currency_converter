@@ -4,6 +4,9 @@ import Header from "./Components/Header";
 import Main from "./Components/Main";
 import { ContextProvider } from "./Store/ContextProvider";
 import Footer from "./Components/Footer";
+import 'bootstrap/dist/js/bootstrap.bundle.min';
+import { IoSettingsOutline } from "react-icons/io5";
+
 
 
 function App() {

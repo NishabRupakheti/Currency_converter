@@ -9,14 +9,14 @@ const Footer = () => {
       <div className="accordion-item">
         <h2 className="accordion-header">
           <button
-            className="accordion-button text-center d-block fs-3"
+            className="accordion-button text-center fs-3"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#collapseOne"
             aria-expanded="true"
             aria-controls="collapseOne"
           >
-            <IoMdArrowDropdown />
+            🐉
           </button>
         </h2>
         <div

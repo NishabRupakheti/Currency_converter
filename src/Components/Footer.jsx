@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "../styles/Footer.module.css";
-import { IoMdArrowDropdown } from "react-icons/io";
 
 
 const Footer = () => {

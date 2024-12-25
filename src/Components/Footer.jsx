@@ -4,7 +4,7 @@ import styles from "../styles/Footer.module.css";
 
 const Footer = () => {
   return (
-    <div className="accordion text-center " id="accordionExample">
+    <div className="accordion text-center w-75 w-sm-75 mx-auto " id="accordionExample">
       <div className="accordion-item">
         <h2 className="accordion-header">
           <button
@@ -12,7 +12,7 @@ const Footer = () => {
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#collapseOne"
-            aria-expanded="true"
+            aria-expanded="false"
             aria-controls="collapseOne"
           >
             🐉
@@ -20,7 +20,7 @@ const Footer = () => {
         </h2>
         <div
           id="collapseOne"
-          className="accordion-collapse collapse show"
+          className="accordion-collapse collapse"
           data-bs-parent="#accordionExample"
         >
           <div className="accordion-body">

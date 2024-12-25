@@ -10,7 +10,6 @@ const Button = () => {
     secCurrency,
     primaryField,
     setPrimaryField,
-    secondaryField,
     setSecondaryField,
   } = useContext(CurrencyContext);
 
@@ -33,23 +32,16 @@ const Button = () => {
   const handleClick = async () => {
     const options = {
       method: "GET",
-      url: "https://alpha-vantage.p.rapidapi.com/query",
-      params: {
-        to_currency: secCurrency,
-        function: "CURRENCY_EXCHANGE_RATE",
-        from_currency: primCurrency,
-      },
-      headers: {
-        "x-rapidapi-key": "73918fb350mshaf79356cbee72b9p11ee84jsn42d2f144a22d",
-        "x-rapidapi-host": "alpha-vantage.p.rapidapi.com",
-      },
+      url: `https://v6.exchangerate-api.com/v6/29b6fc78ad1bee9877c90f26/latest/${primCurrency}`,
     };
 
     try {
       const response = await axios.request(options);
-      const rate =
-        response.data["Realtime Currency Exchange Rate"]["5. Exchange Rate"];
-      setSecondaryField(rate * primaryField);
+      setSecondaryField(
+        (response.data["conversion_rates"][secCurrency] * primaryField).toFixed(
+          2
+        )
+      );
     } catch (error) {
       console.error(error);
     }
@@ -59,14 +51,14 @@ const Button = () => {
     <div className="container text-center">
       <button
         type="button"
-        className="btn btn-outline-dark"
+        className="btn btn-outline-primary"
         onClick={handleClick}
       >
         Convert
       </button>
       <button
         type="button"
-        className="btn btn-outline-dark mx-2"
+        className="btn btn-outline-secondary mx-2"
         onClick={swapHandle}
       >
         Swap

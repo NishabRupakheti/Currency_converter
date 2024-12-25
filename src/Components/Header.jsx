@@ -1,10 +1,12 @@
 import React from 'react'
-import styles from '../styles/Header.module.css'
 
 const Header = () => {
   return (
-<div className={`header text-center ${styles.header} p-3 m-2 `} >
-        Currency exchange   
+    <div className="bg-primary text-white py-3 text-center w-75 mx-auto rounded shadow-lg">
+      <div className="d-flex justify-content-center align-items-center mb-3">
+        <h1 className="display-6 fw-bold">Currency Exchange 🤑</h1>
+      </div>
+      <p className="lead">Get the latest currency exchange rates</p>
     </div>
   )
 }

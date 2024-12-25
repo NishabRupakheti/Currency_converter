@@ -4,7 +4,7 @@ import styles from "../styles/Footer.module.css";
 
 const Footer = () => {
   return (
-    <div className="accordion text-center w-75 w-sm-75 mx-auto " id="accordionExample">
+    <div className="accordion text-center mx-auto " id="accordionExample">
       <div className="accordion-item">
         <h2 className="accordion-header">
           <button

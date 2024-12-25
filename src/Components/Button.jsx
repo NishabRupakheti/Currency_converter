@@ -32,7 +32,7 @@ const Button = () => {
   const handleClick = async () => {
     const options = {
       method: "GET",
-      url: `https://v6.exchangerate-api.com/v6/29b6fc78ad1bee9877c90f26/latest/${primCurrency}`,
+      url: `https://v6.exchangerate-api.com/v6/${import.meta.env.VITE_API_KEY}/latest/${primCurrency}`,
     };
 
     try {

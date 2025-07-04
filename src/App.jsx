@@ -6,14 +6,13 @@ import { ContextProvider } from "./Store/ContextProvider";
 import Footer from "./Components/Footer";
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 
-
 function App() {
   return (
-    <div className="container app-container rounded p-3 w-sm-100 w-md-75 w-lg-75 ">
+    <div className="app-container">
       <ContextProvider>
         <Header />
         <Main />
-        <Footer/>
+        <Footer />
       </ContextProvider>
     </div>
   );

@@ -1,5 +1,223 @@
 .inputGroup {
-    padding: 10px;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    padding: 1rem;
+    margin: 1rem 0;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: visible;
+}
+
+.inputGroup:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+
+.inputContainer {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.inputWrapper {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 12px;
+    padding: 0.3rem;
+    border: 2px solid rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    position: relative;
+    z-index: 1;
+}
+
+.inputWrapper:focus-within {
+    border-color: #1e293b;
+    box-shadow: 0 4px 20px rgba(30, 41, 59, 0.15);
+    transform: translateY(-1px);
+    z-index: 5;
+}
+
+.currencyInput {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 0.8rem;
+    font-size: 1rem;
+    font-weight: 500;
+    background: transparent;
+    color: #2d3748;
+    min-width: 0;
+}
+
+.currencyInput::placeholder {
+    color: #a0aec0;
+    font-size: 0.9rem;
+}
+
+.currencySelect {
+    border: none;
+    outline: none;
+    padding: 0.8rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 80px;
+    position: relative;
+    z-index: 10;
+}
+
+.currencySelect:hover {
+    transform: scale(1.05);
+}
+
+.currencySelect option {
+    background: white;
+    color: #333;
+    padding: 0.5rem;
+    font-weight: 500;
+    border: none;
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.primaryButton {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    border: none;
+    border-radius: 12px;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(30, 41, 59, 0.2);
+    width: 100%;
+}
+
+.primaryButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(30, 41, 59, 0.3);
+}
+
+.secondaryButton {
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid rgba(30, 41, 59, 0.2);
+    border-radius: 12px;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1e293b;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.secondaryButton:hover {
+    background: rgba(30, 41, 59, 0.05);
+    transform: translateY(-2px);
+    border-color: #1e293b;
+}
+
+@media (min-width: 768px) {
+    .inputGroup {
+        padding: 2rem;
+        margin: 2rem 0;
+        border-radius: 20px;
+    }
+    
+    .inputContainer {
+        margin-bottom: 1.5rem;
+    }
+    
+    .inputWrapper {
+        border-radius: 16px;
+        padding: 0.5rem;
+    }
+    
+    .currencyInput {
+        padding: 1rem;
+        font-size: 1.1rem;
+    }
+    
+    .currencyInput::placeholder {
+        font-size: 1rem;
+    }
+    
+    .currencySelect {
+        padding: 1rem;
+        font-size: 1rem;
+        min-width: 100px;
+        border-radius: 12px;
+    }
+    
+    .buttonContainer {
+        flex-direction: row;
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+    
+    .primaryButton,
+    .secondaryButton {
+        font-size: 1.1rem;
+        min-width: 120px;
+        width: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .inputGroup {
+        padding: 0.8rem;
+        margin: 0.5rem 0;
+        border-radius: 12px;
+    }
+    
+    .inputContainer {
+        margin-bottom: 0.8rem;
+    }
+    
+    .inputWrapper {
+        border-radius: 10px;
+        padding: 0.2rem;
+    }
+    
+    .currencyInput {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
+    
+    .currencyInput::placeholder {
+        font-size: 0.8rem;
+    }
+    
+    .currencySelect {
+        padding: 0.6rem;
+        font-size: 0.8rem;
+        min-width: 70px;
+        border-radius: 6px;
+    }
+    
+    .buttonContainer {
+        gap: 0.6rem;
+        margin-top: 1rem;
+    }
+    
+    .primaryButton,
+    .secondaryButton {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
 }

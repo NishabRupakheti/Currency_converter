@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useContext, useEffect } from "react";
 import CurrencyContext from "../Store/ContextProvider";
+import styles from "../styles/inputGroup.module.css";
 
 const Button = () => {
   const {
@@ -48,20 +49,20 @@ const Button = () => {
   };
 
   return (
-    <div className="container text-center">
+    <div className={styles.buttonContainer}>
       <button
         type="button"
-        className="btn btn-outline-primary"
+        className={styles.primaryButton}
         onClick={handleClick}
       >
-        Convert
+        Convert 🔄
       </button>
       <button
         type="button"
-        className="btn btn-outline-secondary mx-2"
+        className={styles.secondaryButton}
         onClick={swapHandle}
       >
-        Swap
+        Swap 🔄
       </button>
     </div>
   );

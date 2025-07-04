@@ -2,6 +2,7 @@ import { useContext } from "react";
 import React from "react";
 import Button from "./Button";
 import CurrencyContext from "../Store/ContextProvider";
+import styles from "../styles/inputGroup.module.css";
 
 const Input = () => {
   const {
@@ -17,19 +18,17 @@ const Input = () => {
 
   return (
     <>
-      <div className={`input-group mb-3 p-3`}>
-        <input
-          value={primaryField}
-          onChange={(e) => setPrimaryField(e.target.value)}
-          type="number"
-          className="form-control"
-          placeholder={`Enter ${primCurrency}`}
-          aria-label="Amount"
-        />
-        <div className="input-group-append">
+      <div className={styles.inputContainer}>
+        <div className={styles.inputWrapper}>
+          <input
+            value={primaryField}
+            onChange={(e) => setPrimaryField(e.target.value)}
+            type="number"
+            className={styles.currencyInput}
+            placeholder={`Enter amount in ${primCurrency}`}
+          />
           <select
-            className="form-select mx-1"
-            id="inputGroupSelect01"
+            className={styles.currencySelect}
             value={primCurrency}
             onChange={(e) => setPrimCurrency(e.target.value)}
           >
@@ -41,19 +40,19 @@ const Input = () => {
           </select>
         </div>
       </div>
-      <div className="input-group mb-3 p-3 rounded rounded-4 ">
-        <input
-          value={secondaryField}
-          disabled
-          type="number"
-          className="form-control"
-          placeholder="Secondary currency"
-          aria-label="Amount"
-        />
-        <div className="input-group-append">
+
+      <div className={styles.inputContainer}>
+        <div className={styles.inputWrapper}>
+          <input
+            value={secondaryField}
+            disabled
+            type="number"
+            className={styles.currencyInput}
+            placeholder={`Amount in ${secCurrency}`}
+            style={{ backgroundColor: 'rgba(0,0,0,0.05)' }}
+          />
           <select
-            className="form-select rounded rounded-2 mx-1 "
-            id="inputGroupSelect02"
+            className={styles.currencySelect}
             value={secCurrency}
             onChange={(e) => setSecCurrency(e.target.value)}
           >
@@ -65,6 +64,7 @@ const Input = () => {
           </select>
         </div>
       </div>
+
       <Button />
     </>
   );

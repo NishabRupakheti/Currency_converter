@@ -14,7 +14,7 @@ const Footer = () => {
             aria-expanded="false"
             aria-controls="collapseOne"
           >
-            <span style={{ margin: '0 auto' }}>�‍💻</span>
+            <span style={{ margin: '0 auto' }}>🐉</span>
           </button>
         </h2>
         <div
@@ -28,7 +28,7 @@ const Footer = () => {
                 <blockquote className="blockquote mb-0">
                   <p className={styles.footHead}>Nishab</p>
                   <footer className={`blockquote-footer ${styles.developerInfo}`}>
-                    Student of ICT • Passionate Developer
+                    •Student of ICT•
                   </footer>
                 </blockquote>
               </div>

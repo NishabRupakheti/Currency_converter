@@ -1,0 +1,33 @@
+name : Deploy to GitHub Pages
+
+on: # trigger - when to run the workflow ?? 
+  push: # when code is pushed to the repository
+    branches:
+      - [ main ]  # main branch specified 
+  
+jobs: 
+   build-and-deploy: # job name
+     runs-on: ubuntu-latest # Github provided virtual environment
+
+      steps: # individual tasks to be performed in the job (in order)
+        - name: Checkout code 
+        uses: actions/checkout@v4 # copy the repository code to the virtual environment
+
+        - name: Set up Node.js
+        uses: actions/setup-node@v3 # setup Node.js environment
+        with:
+          node-version: '24' # Specify the Node.js version
+
+        - name: Install dependencies # install project dependencies
+        run: npm ci # clean install of dependencies
+      
+        - name: Build the app 
+        run: npm run build
+
+        - name: Deploy 
+        if: github.ref == 'refs/heads/main'  # deploy only if the code is pushed to main branch
+        uses: JamesIves/github-pages-deploy-action@v4.4.0
+        with:
+          branch: gh-pages # The branch the action should deploy to.
+          folder: dist # The folder the action should deploy.
+

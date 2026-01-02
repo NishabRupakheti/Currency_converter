@@ -27,6 +27,8 @@ jobs:
         run: npm ci # Clean install of dependencies (fast and reliable for CI)
 
       - name: Build the app
+        env:
+          VITE_API_KEY: ${{ secrets.VITE_API_KEY }}
         run: npm run build # Vite creates the /dist folder
 
       - name: Deploy

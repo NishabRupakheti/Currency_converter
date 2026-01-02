@@ -6,9 +6,8 @@ on: # trigger - when to run the workflow ??
       - [ main ]  # main branch specified 
   
 jobs: 
-   build-and-deploy: # job name
-     runs-on: ubuntu-latest # Github provided virtual environment
-
+  build-and-deploy: # job name
+    runs-on: ubuntu-latest # Github provided virtual environment
       steps: # individual tasks to be performed in the job (in order)
         - name: Checkout code 
         uses: actions/checkout@v4 # copy the repository code to the virtual environment

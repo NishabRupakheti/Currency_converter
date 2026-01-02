@@ -2,6 +2,7 @@ import { useContext } from "react";
 import React from "react";
 import Button from "./Button";
 import CurrencyContext from "../Store/ContextProvider";
+import CurrencyDropdown from "./CurrencyDropdown";
 import styles from "../styles/inputGroup.module.css";
 
 const Input = () => {
@@ -27,17 +28,11 @@ const Input = () => {
             className={styles.currencyInput}
             placeholder={`Enter amount in ${primCurrency}`}
           />
-          <select
-            className={styles.currencySelect}
+          <CurrencyDropdown
             value={primCurrency}
-            onChange={(e) => setPrimCurrency(e.target.value)}
-          >
-            {currenciesArray.map((curr, index) => (
-              <option key={index} value={curr}>
-                {curr}
-              </option>
-            ))}
-          </select>
+            onChange={setPrimCurrency}
+            currencies={currenciesArray}
+          />
         </div>
       </div>
 
@@ -51,17 +46,11 @@ const Input = () => {
             placeholder={`Amount in ${secCurrency}`}
             style={{ backgroundColor: 'rgba(0,0,0,0.05)' }}
           />
-          <select
-            className={styles.currencySelect}
+          <CurrencyDropdown
             value={secCurrency}
-            onChange={(e) => setSecCurrency(e.target.value)}
-          >
-            {currenciesArray.map((curr, index) => (
-              <option key={index} value={curr}>
-                {curr}
-              </option>
-            ))}
-          </select>
+            onChange={setSecCurrency}
+            currencies={currenciesArray}
+          />
         </div>
       </div>
 

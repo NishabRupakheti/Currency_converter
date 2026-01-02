@@ -1,8 +1,8 @@
 .header {
     background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
     border-radius: 16px;
-    padding: 1.5rem 1rem;
-    margin-bottom: 1.5rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
     position: relative;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -21,17 +21,17 @@
 }
 
 .headerTitle {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: white;
     text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
     position: relative;
     z-index: 1;
 }
 
 .headerSubtitle {
-    font-size: 1rem;
+    font-size: 0.85rem;
     color: rgba(255, 255, 255, 0.9);
     font-weight: 300;
     position: relative;
@@ -41,27 +41,27 @@
 .currencyIcon {
     display: inline-block;
     margin-left: 0.5rem;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     animation: pulse 2s infinite;
 }
 
 @media (min-width: 768px) {
     .header {
         border-radius: 20px;
-        padding: 2rem;
-        margin-bottom: 2rem;
+        padding: 1.25rem;
+        margin-bottom: 1.25rem;
     }
     
     .headerTitle {
-        font-size: 2.5rem;
+        font-size: 1.75rem;
     }
     
     .headerSubtitle {
-        font-size: 1.2rem;
+        font-size: 0.95rem;
     }
     
     .currencyIcon {
-        font-size: 2rem;
+        font-size: 1.4rem;
     }
 }
 

@@ -1,0 +1,34 @@
+name: Deploy to GitHub Pages # Fixed: no space after colon
+
+on: # Trigger: when to run the workflow
+  push: # When code is pushed to the repository
+    branches: [main] # Fixed: simple list syntax for main branch (no extra brackets or - [ ])
+
+  pull_request: # Optional: also run on PRs for testing
+    branches: [main]
+
+jobs:
+  build-and-deploy: # Job name
+    runs-on: ubuntu-latest # GitHub-provided virtual environment
+
+    steps: # Individual tasks (aligned with runs-on, 2 spaces under job)
+      - name: Checkout code
+        uses: actions/checkout@v4 # Copies repo code to the VM (updated to latest v4)
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4 # Updated to v4 (newer and recommended; v3 is old)
+        with:
+          node-version: "20" # Changed to '20' (stable and widely compatible with Vite; try '24' if your local uses it and build fails)
+
+      - name: Install dependencies
+        run: npm ci # Clean install of dependencies (fast and reliable for CI)
+
+      - name: Build the app
+        run: npm run build # Vite creates the /dist folder
+
+      - name: Deploy
+        if: github.ref == 'refs/heads/main' # Deploy only on main branch pushes
+        uses: JamesIves/github-pages-deploy-action@v4 # Removed specific .4.0—@v4 gets latest stable
+        with:
+          branch: gh-pages # The branch to deploy to
+          folder: dist # Vite's build output folder

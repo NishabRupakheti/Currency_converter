@@ -7,9 +7,6 @@ on: # Trigger: when to run the workflow
   push: # When code is pushed to the repository
     branches: [main] # Fixed: simple list syntax for main branch (no extra brackets or - [ ])
 
-  pull_request: # Optional: also run on PRs for testing
-    branches: [main]
-
 jobs:
   build-and-deploy: # Job name
     runs-on: ubuntu-latest # GitHub-provided virtual environment

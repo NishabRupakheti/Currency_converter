@@ -27,7 +27,6 @@
     text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     margin-bottom: 0.3rem;
     position: relative;
-    z-index: 1;
 }
 
 .headerSubtitle {
@@ -35,7 +34,6 @@
     color: rgba(255, 255, 255, 0.9);
     font-weight: 300;
     position: relative;
-    z-index: 1;
 }
 
 .currencyIcon {

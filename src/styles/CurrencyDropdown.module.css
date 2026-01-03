@@ -1,11 +1,12 @@
 .dropdownContainer {
   position: relative;
   min-width: 85px;
-  z-index: 10;
+  /* No base z-index to avoid conflicts */
 }
 
+/* Increase z-index when dropdown is open */
 .dropdownContainer:hover {
-  z-index: 1000;
+  z-index: 10000;
 }
 
 .selectedValue {
@@ -22,6 +23,8 @@
   gap: 0.5rem;
   transition: all 0.3s ease;
   box-shadow: 0 2px 8px rgba(30, 41, 59, 0.2);
+  position: relative;
+  z-index: 1;
 }
 
 .selectedValue:hover {
@@ -40,19 +43,21 @@
 
 .dropdownMenu {
   position: absolute;
-  top: calc(100% + 0.5rem);
+  top: 100%; /* Remove gap - menu starts immediately after button */
   left: 0;
   right: 0;
   background: white;
-  border-radius: 12px;
+  border-radius: 0 0 12px 12px;
   box-shadow: 
     0 10px 40px rgba(0, 0, 0, 0.15),
     0 0 0 1px rgba(0, 0, 0, 0.08);
   overflow: hidden;
-  animation: slideDown 0.3s ease;
+  animation: slideDown 0.2s ease;
   max-height: 250px;
   overflow-y: auto;
-  z-index: 9999;
+  z-index: 2;
+  margin-top: -2px; /* Overlap slightly with button for seamless hover */
+  padding-top: 4px; /* Visual spacing */
 }
 
 @keyframes slideDown {

@@ -9,7 +9,7 @@
     transition: all 0.3s ease;
     position: relative;
     overflow: visible;
-    z-index: 10;
+    z-index: 100; /* Higher than footer and header */
 }
 
 .inputGroup:hover {
@@ -20,7 +20,17 @@
 .inputContainer {
     margin-bottom: 0.75rem;
     position: relative;
-    z-index: 10;
+    /* Allow dropdown to overflow properly */
+    overflow: visible;
+}
+
+/* First input container should have higher z-index than second */
+.inputContainer:first-of-type {
+    z-index: 102;
+}
+
+.inputContainer:nth-of-type(2) {
+    z-index: 101;
 }
 
 .inputWrapper {
@@ -33,6 +43,7 @@
     transition: all 0.3s ease;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
     position: relative;
+    overflow: visible;
 }
 
 .inputWrapper:focus-within {
